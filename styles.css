@@ -1,0 +1,304 @@
+:root {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.teclado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.fila {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 15px;
+}
+
+.tecla {
+    align-items: center;
+    background-color: rgb(174, 195, 203);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex: 1 1;
+    font-size: 17px;
+    font-weight: bold;
+    justify-content: center;
+    padding: 15px;
+    padding-inline: 19px;
+    text-decoration: inherit;
+    text-transform: capitalize;
+}
+
+.teclaPresionada {
+    background-color: rgb(133, 147, 153);
+}
+
+
+.tecla:hover {
+    background-color: rgb(212, 225, 230);
+}
+
+.tecla:active {
+    transform: scale(1.15);
+}
+
+.teclaAncha {
+    text-transform: none;
+    flex: 1;
+}
+
+.boardFilas {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.boardFila {
+    display: flex;
+    gap: 5px;
+}
+
+.letra {
+    border: 2px solid #dee1e9;
+    font-size: 28px;
+    font-weight: 700;
+    height: 56px;
+    margin: 3px;
+    text-transform: uppercase;
+    width: 56px;
+    border-radius: 5px;
+    color: #393e4c;
+    background: #fbfcff;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letraPosicionCorrecta {
+    background: #8bff8b !important;
+}
+
+.letraCorrecta {
+    background: #fdff86;
+}
+
+.letraIncorrecta {
+    background: #b2b3b8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+
+    -webkit-animation: fadeInFromNone 0.3s ease-out;
+    -moz-animation: fadeInFromNone 0.3s ease-out;
+    -o-animation: fadeInFromNone 0.3s ease-out;
+    animation: fadeInFromNone 0.3s ease-out;
+}
+
+.modal-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    height: 20%;
+    gap: 20px;
+    border-radius: 20px;
+
+    -webkit-animation: fadeInFromNone 0.5s ease-out;
+    -moz-animation: fadeInFromNone 0.5s ease-out;
+    -o-animation: fadeInFromNone 0.5s ease-out;
+    animation: fadeInFromNone 0.5s ease-out;
+}
+
+.modal-content p {
+    margin: 0;
+    font-size: 1em;
+}
+.modal-content span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.modal-content h1 {
+    margin: 0;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: flex;
+        opacity: 0;
+    }
+
+    100% {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: flex;
+        opacity: 0;
+    }
+
+    100% {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: flex;
+        opacity: 0;
+    }
+
+    100% {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: flex;
+        opacity: 0;
+    }
+
+    100% {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    padding-block: 0.8rem;
+
+    font-weight: bold;
+    font-size: 1em;
+    background-color: rgb(77, 129, 129);
+
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+}
+button:hover {
+    background-color: rgb(108, 173, 173);
+}
+button:active {
+    transform: scale(1.1);
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    margin-inline: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+.aviso {
+    background-color: #393e4c;
+    border-radius: 15px;
+    width: 15rem;
+    height: 3rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.2rem;
+    -webkit-animation: fadeInFromNone 0.2s ease-out;
+    -moz-animation: fadeInFromNone 0.2s ease-out;
+    -o-animation: fadeInFromNone 0.2s ease-out;
+    animation: fadeInFromNone 0.2s ease-out;
+}
+
+
+.avisoContainer {
+    height: 3rem;
+}

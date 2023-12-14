@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Wordle</h1>
+        <button id="reiniciar" tabindex="-1">Reiniciar</button>
+    </header>
+    <main>
+        <div class="avisoContainer">
+            <div class="aviso">
+                <span id="aviso">
+                    asd
+                </span>
+            </div>
+        </div>
+        <div class="board">
+            <div class="boardFilas">
+                <div class="boardFila">
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                </div>
+                <div class="boardFila">
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                </div>
+                <div class="boardFila">
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                </div>
+                <div class="boardFila">
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                </div>
+                <div class="boardFila">
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                </div>
+                <div class="boardFila">
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                    <div class="letra"></div>
+                </div>
+            </div>
+        </div>
+        <div class="teclado">
+            <div class="fila">
+                <div tabindex="-1" class="tecla">q</div>
+                <div tabindex="-1" class="tecla">w</div>
+                <div tabindex="-1" class="tecla">e</div>
+                <div tabindex="-1" class="tecla">r</div>
+                <div tabindex="-1" class="tecla">t</div>
+                <div tabindex="-1" class="tecla">y</div>
+                <div tabindex="-1" class="tecla">u</div>
+                <div tabindex="-1" class="tecla">i</div>
+                <div tabindex="-1" class="tecla">o</div>
+                <div tabindex="-1" class="tecla">p</div>
+            </div>
+            <div class="fila">
+                <div tabindex="-1" class="tecla">a</div>
+                <div tabindex="-1" class="tecla">s</div>
+                <div tabindex="-1" class="tecla">d</div>
+                <div tabindex="-1" class="tecla">f</div>
+                <div tabindex="-1" class="tecla">g</div>
+                <div tabindex="-1" class="tecla">h</div>
+                <div tabindex="-1" class="tecla">j</div>
+                <div tabindex="-1" class="tecla">k</div>
+                <div tabindex="-1" class="tecla">l</div>
+            </div>
+            <div class="fila">
+                <div tabindex="-1" class="tecla teclaAncha">Borrar</div>
+                <div tabindex="-1" class="tecla">z</div>
+                <div tabindex="-1" class="tecla">x</div>
+                <div tabindex="-1" class="tecla">c</div>
+                <div tabindex="-1" class="tecla">v</div>
+                <div tabindex="-1" class="tecla">b</div>
+                <div tabindex="-1" class="tecla">n</div>
+                <div tabindex="-1" class="tecla">m</div>
+                <div tabindex="-1" class="tecla teclaAncha">Enter</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h1 id="tituloModal"></h1>
+            <p>La palabra era: <span id="palabraCorrecta"></span></p>
+            <button id="aceptarModal">Aceptar</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
