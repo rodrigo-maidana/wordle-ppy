@@ -1,27 +1,6 @@
 let intentos = 6;
 
-let palabrasAleatorias = [
-  "lunar",
-  "flora",
-  "pinza",
-  "danza",
-  "hojas",
-  "papel",
-  "venir",
-  "fuego",
-  "rosas",
-  "campo",
-  "sonar",
-  "silla",
-  "fruta",
-  "brazo",
-  "nubes",
-  "mesas",
-  "meson",
-  "lunar",
-  "canto",
-  "grano",
-];
+let palabrasAleatorias = [];
 
 let intento = 0;
 let palabraEscrita = "";
@@ -57,6 +36,7 @@ function quitarAviso() {
   divAviso.style.display = "none";
 }
 function empezarJuego() {
+  obtenerPalabrasAleatorias();
   quitarAviso();
   intentos = 6;
   palabraObjetivo =
@@ -230,6 +210,29 @@ function ocultarModales() {
 function desactivarEventListeners() {
   document.removeEventListener("keydown", teclaHandler);
   teclas.forEach((tecla) => tecla.removeEventListener("click", clickEnTecla));
+}
+
+function obtenerPalabrasAleatorias() {
+  const apiUrl = "http://apimocha.com/rodrigo-maidana/wordle-ppy";
+
+  // Hacer una solicitud HTTP para obtener las palabras desde la API
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      // Verificar si la respuesta contiene la propiedad 'words'
+      if (data && data.words && Array.isArray(data.words)) {
+        // Limpiar el array existente y agregar las nuevas palabras
+        palabrasAleatorias = data.words.map((word) => word.toLowerCase());
+        console.log("Lista de palabras aleatorias:", palabrasAleatorias);
+      } else {
+        console.error(
+          "La respuesta de la API no contiene la propiedad 'words'."
+        );
+      }
+    })
+    .catch((error) =>
+      console.error("Error al obtener la lista de palabras:", error)
+    );
 }
 
 empezarJuego();
